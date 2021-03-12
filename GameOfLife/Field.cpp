@@ -42,28 +42,28 @@ void Field::update()
 			// the counter variable is used for counting the current amount of neighbours
 			unsigned int counter = 0;
 
-			// check if the current cell ist on [0][0] (left upper corner)
+			// check if the current cell ist on [0][0] (upper left corner)
 			if (h == 0 && w == 0)
 			{
 				if (this->_field[h][w + 1].is_alive()) { counter++; }
 				if (this->_field[h + 1][w + 1].is_alive()) { counter++; }
 				if (this->_field[h + 1][w].is_alive()) { counter++; }
 			}
-			// check if the current cell is on [0][max] (right upper corner)
+			// check if the current cell is on [0][max] (upper right corner)
 			else if (h == 0 && w == this->_width - 1)
 			{
 				if (this->_field[h][w - 1].is_alive()) { counter++; }
 				if (this->_field[h + 1][w - 1].is_alive()) { counter++; }
 				if (this->_field[h + 1][w].is_alive()) { counter++; }
 			}
-			// check if the current cell is on [max][0] (left lower corner)
+			// check if the current cell is on [max][0] (lower left corner)
 			else if (h == this->_height - 1 && w == 0)
 			{
 				if (this->_field[h - 1][w].is_alive()) { counter++; }
 				if (this->_field[h - 1][w + 1].is_alive()) { counter++; }
 				if (this->_field[h][w + 1].is_alive()) { counter++; }
 			}
-			// check if the current cell is on [max][max] (right lower corner)
+			// check if the current cell is on [max][max] (lower right corner)
 			else if (h == this->_height - 1 && w == this->_width - 1)
 			{
 				if (this->_field[h - 1][w].is_alive()) { counter++; }
@@ -165,4 +165,22 @@ void Field::print()
 
 		std::cout << std::endl;
 	}
+}
+
+
+unsigned int Field::get_height()
+{
+	return this->_height;
+}
+
+
+unsigned int Field::get_width()
+{
+	return this->_width;
+}
+
+
+bool Field::get_status(unsigned int h, unsigned int w)
+{
+	return this->_field[h][w].is_alive();
 }

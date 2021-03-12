@@ -6,10 +6,13 @@ class GameOfLife
 {
 private:
 	Field *_field;
+	unsigned int _width;
+	unsigned int _height;
+	unsigned int _cellSize;
 
 
 public:
-	GameOfLife();
+	GameOfLife(unsigned int, unsigned int, unsigned int);
 	~GameOfLife();
 
 	void run();

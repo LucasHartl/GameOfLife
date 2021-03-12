@@ -7,9 +7,10 @@ int main()
     system("title Game Of Life Console");
     srand(time(NULL));
 
-    GameOfLife game = GameOfLife();
-    game.run();
+    GameOfLife *game = new GameOfLife(75, 75, 10);
+    game->run();
+    delete game;
 
-    system("pause");
+    //system("pause");
     return 0;
 }

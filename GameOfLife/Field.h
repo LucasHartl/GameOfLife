@@ -15,5 +15,10 @@ public:
 
 	void update();
 	void print();
+
+	// Getter
+	unsigned int get_width();
+	unsigned int get_height();
+	bool get_status(unsigned int, unsigned int);
 };
 
