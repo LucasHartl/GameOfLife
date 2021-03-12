@@ -17,13 +17,13 @@ GameOfLife::~GameOfLife()
 
 void GameOfLife::run()
 {
-    // game loop
     sf::RenderWindow window(sf::VideoMode(this->_width * this->_cellSize, this->_height * this->_cellSize), "Game Of Life");
     sf::RectangleShape cell;
     cell.setSize(sf::Vector2f(static_cast<float>(this->_cellSize), static_cast<float>(this->_cellSize)));
     cell.setOutlineColor(sf::Color::Blue);
     cell.setOutlineThickness(2);
 
+    // game loop
     while (window.isOpen())
     {
         sf::Event event;
